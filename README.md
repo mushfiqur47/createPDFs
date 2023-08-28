@@ -14,11 +14,10 @@ This uses `reportlab` library for Python which creates a canvas to "draw" your d
   ```
   pip3 install openpyxl
   ```
-4. Run the code
+4. To create all the pdfs in the `pdfs` folder run the code:
   ```
   python3 createPDFs.py
   ```
-  It will create all the pdfs in the `pdfs` folder
 5. If you want to delete all the generated pdfs run:
   ```
   python3 deletePDFs.py
