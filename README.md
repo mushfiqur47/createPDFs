@@ -16,10 +16,13 @@ This uses `reportlab` library for Python which creates a canvas to "draw" your d
   ```
 4. Run the code
   ```
-  python3 createPDF.py
+  python3 createPDFs.py
   ```
-
-It will create all the pdfs in the same folder
+  It will create all the pdfs in the `pdfs` folder
+5. If you want to delete all the generated pdfs run:
+  ```
+  python3 deletePDFs.py
+  ```
 
 TODO: send each pdf to each email after creating them
 
