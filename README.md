@@ -22,3 +22,12 @@ This uses `reportlab` library for Python which creates a canvas to "draw" your d
 It will create all the pdfs in the same folder
 
 TODO: send each pdf to each email after creating them
+
+## Demo
+#### Excel file
+
+<img width="571" alt="Screenshot 2023-08-28 at 12 53 38" src="https://github.com/lmberard/createPDFs/assets/50753891/8c4da878-82b5-411b-a96c-a0f158ee4fe9">
+
+#### Generated pdf
+
+<img width="768" alt="Screenshot 2023-08-28 at 12 54 21" src="https://github.com/lmberard/createPDFs/assets/50753891/7485a4c5-788b-4fed-a8e8-e334feefdf01">
