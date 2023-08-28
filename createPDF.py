@@ -1,14 +1,15 @@
 import pandas as pd
+import smtplib
+import os
 from reportlab.lib.pagesizes import landscape, letter
 from reportlab.lib.colors import HexColor
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Image
-import smtplib
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.mime.text import MIMEText
-from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
 
 # Read Excel data
 excel_file = 'names.xlsx'
@@ -108,10 +109,18 @@ for index, row in df.iterrows():
     footer_path = 'photos/logo.png'
     add_scaled_image(c, footer_path, 50, page_height/1.3, 10)
 
-
+    # Create a "pdfs" folder if it doesn't exist
+    if not os.path.exists("pdfs"):
+        os.makedirs("pdfs")
+    
+    # Save the PDF inside the "pdfs" folder
+    pdf_path = os.path.join("pdfs", pdf_filename)
+    # c.saveToFile(pdf_path)
     c.save()
+    os.rename(pdf_filename, pdf_path)  # Rename the generated PDF
 
-    print(f'Generated {pdf_filename}')
+    # print(f'Generated {pdf_filename}')
+    print(f'Generated {pdf_path}')
 
     # # Send email with the generated PDF as an attachment
     # sender_email = "email@gmail.com"  # Replace with your sender email
